@@ -7,51 +7,44 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oxanium:wght@500;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg:#0d0d0f; --panel:#16161a; --card:#1b1b20; --line:#2a2a30;
-    --text:#ECECEC; --sub:#9a9aa2; --gold:#B1881B; --gold-soft:#d8b65a;
-    --ok:#3fae6e; --warn:#d8893f; --over:#d8453f;
-  }
+  :root{--bg:#0d0d0f;--panel:#16161a;--card:#1b1b20;--line:#2a2a30;--text:#ECECEC;--sub:#9a9aa2;
+    --gold:#B1881B;--gold-soft:#d8b65a;--ok:#3fae6e;--warn:#d8893f;--over:#d8453f;}
   *{box-sizing:border-box;}
-  body{margin:0; background:var(--bg); color:var(--text);
-    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif; line-height:1.7; padding:24px;}
-  .wrap{max-width:820px; margin:0 auto;}
-  header{margin-bottom:22px; border-bottom:1px solid var(--line); padding-bottom:16px;}
-  .brand{font-family:"Oxanium",sans-serif; letter-spacing:.18em; color:var(--gold); font-size:13px;}
-  h1{font-size:22px; margin:6px 0 4px; font-weight:700;}
-  .lead{color:var(--sub); font-size:13px; margin:0;}
-  .field{background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:13px 14px; margin-bottom:14px;}
-  .field label{display:block; font-size:11px; letter-spacing:.08em; color:var(--sub); margin-bottom:8px; text-transform:uppercase;}
-  input[type=text], textarea{
-    width:100%; background:#1f1f24; color:var(--text); border:1px solid var(--line);
-    border-radius:8px; padding:11px 12px; font-size:15px; font-family:inherit; resize:vertical;
-  }
-  input[type=text]:focus, textarea:focus{outline:none; border-color:var(--gold);}
-  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px;}
-  .chip{border:1px solid var(--line); background:#1f1f24; color:var(--sub);
-    padding:6px 12px; border-radius:999px; font-size:12px; cursor:pointer; user-select:none;}
-  .chip:hover{border-color:var(--gold); color:var(--gold-soft);}
-  .seg{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden;}
-  .seg button{background:#1f1f24; color:var(--sub); border:none; padding:8px 16px; font-size:13px; cursor:pointer; font-family:inherit;}
-  .seg button.active{background:var(--gold); color:#111; font-weight:700;}
-  .genrow{display:flex; gap:12px; margin:18px 0;}
-  button.gen{flex:1; background:var(--gold); color:#111; border:none; border-radius:10px; padding:14px;
-    font-size:15px; font-weight:700; cursor:pointer; font-family:inherit; letter-spacing:.04em;}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.7;padding:24px;}
+  .wrap{max-width:820px;margin:0 auto;}
+  header{margin-bottom:18px;border-bottom:1px solid var(--line);padding-bottom:16px;}
+  .brand{font-family:"Oxanium",sans-serif;letter-spacing:.18em;color:var(--gold);font-size:13px;}
+  h1{font-size:22px;margin:6px 0 4px;font-weight:700;}
+  .lead{color:var(--sub);font-size:13px;margin:0;}
+  .tips{background:#14130e;border:1px solid #3a2f12;border-radius:10px;padding:11px 14px;margin:14px 0;font-size:12px;color:#cdb978;}
+  .tips b{color:var(--gold-soft);}
+  .field{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:13px 14px;margin-bottom:14px;}
+  .field label{display:block;font-size:11px;letter-spacing:.08em;color:var(--sub);margin-bottom:8px;text-transform:uppercase;}
+  input[type=text],textarea{width:100%;background:#1f1f24;color:var(--text);border:1px solid var(--line);
+    border-radius:8px;padding:11px 12px;font-size:15px;font-family:inherit;resize:vertical;}
+  input[type=text]:focus,textarea:focus{outline:none;border-color:var(--gold);}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .chip{border:1px solid var(--line);background:#1f1f24;color:var(--sub);padding:6px 12px;border-radius:999px;font-size:12px;cursor:pointer;user-select:none;}
+  .chip:hover{border-color:var(--gold);color:var(--gold-soft);}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;}
+  .seg button{background:#1f1f24;color:var(--sub);border:none;padding:8px 16px;font-size:13px;cursor:pointer;font-family:inherit;}
+  .seg button.active{background:var(--gold);color:#111;font-weight:700;}
+  .genrow{display:flex;gap:12px;margin:18px 0;}
+  button.gen{flex:1;background:var(--gold);color:#111;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.04em;}
   button.gen:hover{background:var(--gold-soft);}
-  .cards{display:flex; flex-direction:column; gap:14px;}
-  .pcard{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px;}
-  .pcard .ptag{display:inline-block; font-size:11px; color:#111; background:var(--gold-soft);
-    padding:3px 10px; border-radius:999px; font-weight:700; margin-bottom:10px;}
-  .ptext{white-space:pre-wrap; font-size:15.5px; line-height:1.85;}
-  .pbar{display:flex; justify-content:space-between; align-items:center; margin-top:12px; gap:10px;}
+  .cards{display:flex;flex-direction:column;gap:14px;}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .ptag{display:inline-block;font-size:11px;color:#111;background:var(--gold-soft);padding:3px 10px;border-radius:999px;font-weight:700;margin-bottom:10px;}
+  .ptag.long{background:#5a7fb0;color:#fff;}
+  .ptext{white-space:pre-wrap;font-size:15.5px;line-height:1.9;}
+  .pbar{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px;flex-wrap:wrap;}
   .cnt{font-size:11px;} .cnt.ok{color:var(--ok);} .cnt.warn{color:var(--warn);} .cnt.over{color:var(--over);}
-  .pbtns{display:flex; gap:8px;}
-  .pbtns button{background:#23232a; color:var(--text); border:1px solid var(--line); border-radius:7px;
-    padding:7px 12px; font-size:12px; cursor:pointer; font-family:inherit;}
-  .pbtns button:hover{border-color:var(--gold); color:var(--gold-soft);}
-  .note{font-size:11px; color:var(--sub); margin-top:22px; border-top:1px solid var(--line); padding-top:14px;}
-  .toast{position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--gold); color:#111;
-    padding:10px 20px; border-radius:8px; font-weight:700; font-size:13px; opacity:0; transition:opacity .2s; pointer-events:none;}
+  .pbtns{display:flex;gap:8px;}
+  .pbtns button{background:#23232a;color:var(--text);border:1px solid var(--line);border-radius:7px;padding:7px 12px;font-size:12px;cursor:pointer;font-family:inherit;}
+  .pbtns button:hover{border-color:var(--gold);color:var(--gold-soft);}
+  .note{font-size:11px;color:var(--sub);margin-top:22px;border-top:1px solid var(--line);padding-top:14px;}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--gold);color:#111;padding:10px 20px;border-radius:8px;font-weight:700;font-size:13px;opacity:0;transition:opacity .2s;pointer-events:none;}
   .toast.show{opacity:1;}
 </style>
 </head>
@@ -60,12 +53,14 @@
   <header>
     <div class="brand">BLUESTOKE — POST GENERATOR</div>
     <h1>X投稿ジェネレーター</h1>
-    <p class="lead">テーマを入力して「生成」を押すと、複数パターン（短文・長文）の投稿文を一気に作ります。@yuya_awesome 用。</p>
+    <p class="lead">テーマを入れて生成。短文（140字以内・単発で刺す）と長文（情報が濃い構造化）を作り分けます。@yuya_awesome 用。</p>
   </header>
+
+  <div class="tips">🔥 <b>バズ原則</b>：①最初の1行で止める　②具体・数字・断定　③短文=1メッセージ／長文=箇条書きで構造化　④本文にURLは入れない・ハッシュタグは盛らない（リーチ低下を防ぐ）</div>
 
   <div class="field">
     <label>テーマ / キーワード（自由入力）</label>
-    <input type="text" id="theme" placeholder="例：理念設計 / コーチング / 新サービス告知 / チーム作り …">
+    <input type="text" id="theme" placeholder="例：理念設計 / コーチング / 採用 / 新サービス告知 …">
     <div class="chips" id="presets">
       <span class="chip">理念設計</span><span class="chip">コーチング</span><span class="chip">ブランディング</span>
       <span class="chip">セールス</span><span class="chip">採用・育成</span><span class="chip">経営マインド</span>
@@ -73,134 +68,155 @@
   </div>
 
   <div class="field">
-    <label>核メッセージ（任意・入れると精度UP）</label>
+    <label>核メッセージ（任意・長文の締めに使われ精度UP）</label>
     <textarea id="msg" rows="2" placeholder="一番伝えたい主張を1〜2文で。空欄でもBLUESTOKE風に自動補完します。"></textarea>
   </div>
 
-  <div class="field" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
+  <div class="field" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
     <label style="margin:0;">長さ</label>
     <div class="seg" id="lenSeg">
       <button data-len="both" class="active">両方</button>
-      <button data-len="short">短文</button>
-      <button data-len="long">長文</button>
+      <button data-len="short">短文（〜140字）</button>
+      <button data-len="long">長文（濃いめ）</button>
     </div>
   </div>
 
-  <div class="genrow">
-    <button class="gen" id="genBtn">⚡ 複数パターンを生成する</button>
-  </div>
-
+  <div class="genrow"><button class="gen" id="genBtn">⚡ 投稿文を生成する</button></div>
   <div class="cards" id="cards"></div>
 
   <p class="note">
-    ※ オフライン動作・無料。テンプレート＋フレーズで自動生成します。生成文はそのまま投稿せず最終チェックを。<br>
-    ※ <b>GitHubのリンクを開くとソースコードが表示されます</b>。動かすにはこのファイルをPC上でダブルクリックして開いてください（またはGitHub Pages化）。
+    ※ オフライン・無料。生成文は必ず最終チェックを。<br>
+    ※ <b>長文（140字超）はX Premium必須</b>。未加入なら短文を使うか、長文は👇スレッド分割の下書きとして使ってください。<br>
+    ※ GitHubのblobリンクはソース表示です。動かすURL → <b>https://y-aoki-beep.github.io/x-post-generator/</b>
   </p>
 </div>
 <div class="toast" id="toast">コピーしました</div>
 
 <script>
-/* ===== パターン定義（{T}=テーマ, {M}=核メッセージ） =====
-   各パターンは複数の defaults を持ち、空欄時/再生成でランダムに変化 */
-const PATTERNS = [
-  { tag:"問いかけ・短", len:"short",
-    hook:(t)=>`${t}、ちゃんと機能していますか？`,
-    def:["立派な言葉より、毎日の判断に効いているか。本質はそこ。","掲げて終わっていませんか。使われて初めて意味がある。"] },
-  { tag:"逆説・短", len:"short",
-    hook:(t)=>`${t}は、頑張るほど遠ざかることがある。`,
-    def:["力の入れ方より、向ける方向。順番を変えるだけで結果は変わる。","量より前提。前提がズレた努力は、ただの消耗。"] },
-  { tag:"断定・短", len:"short",
-    hook:(t)=>`${t}の9割は、始める前に決まっている。`,
-    def:["準備＝設計。ここに時間をかけた人だけが、本番で迷わない。","勝負は段取りで決まる。動き出す前の言語化がすべて。"] },
-  { tag:"本音・短", len:"short",
-    hook:()=>`正直に言う。`,
-    def:["近道はない。でも、遠回りを最短にする設計はある。","気合いでは続かない。続く仕組みを先に作るべきだ。"],
-    useThemeInDef:true },
-  { tag:"ストーリー・長", len:"long",
-    hook:(t)=>`先日、${t}について相談を受けた。`,
-    def:["話を聞くほど、問題は表面じゃなく前提にあると分かった。\n\n整えるべきは、やり方じゃなく考え方の土台。\n\nそこを変えた瞬間、景色は一変する。",
-         "悩みの中身は人それぞれでも、根っこはいつも同じ。\n\n「何のために」が曖昧なまま、手段だけ増やしていた。\n\n目的を1行にした瞬間、迷いが消えた。"] },
-  { tag:"Before→After・長", len:"long",
-    hook:(t)=>`${t}がうまくいかないとき、原因はたいてい「順番」にある。`,
-    def:["土台が曖昧なまま動くと、優秀な人ほど空回りする。\n\n先に前提を言語化する。それだけで、同じ努力が成果に変わる。\n\nやることは増やさない。順番を変えるだけ。",
-         "枝葉から手をつけると、いつまでも整わない。\n\n幹を決める。すると枝葉は勝手に揃う。\n\n難しくない。決める順番の問題。"] },
-  { tag:"3つの要点・長", len:"long",
-    hook:(t)=>`${t}で大事なことを、3つに絞ると——`,
-    def:["①目的を1行で言えること\n②競合が言えない独自性があること\n③毎日の判断に使えること\n\n共通するのは「飾り」じゃなく「機能」。",
-         "①誰のためか\n②なぜ自分たちか\n③何をやらないか\n\nこの3つが決まると、迷いは一気に減る。"] },
-  { tag:"宣言・中", len:"long",
-    hook:(t)=>`${t}は、才能じゃなく設計でつくれる。`,
-    def:["センスに見えるものの正体は、たいてい再現可能な手順。\n\nまだ見ぬ世界は、その先にある。",
-         "「らしさ」は感性じゃなく設計で出せる。\n\n仕組みにした瞬間、再現性が生まれる。"] },
+const pick = a => a[Math.floor(Math.random()*a.length)];
+
+/* ====== 短文パターン（140字以内・単発で刺す） ====== */
+const SHORT = [
+  { tag:"逆説で止める", build:(t)=>pick([
+      `${t}、頑張るほど空回りする人がいる。\n\n原因は努力じゃない。順番だ。\n土台を先に決めれば、同じ努力が成果に変わる。`,
+      `${t}は、足し算より引き算。\n\n何を「やらないか」を決めた人から、結果が変わっていく。`,
+    ])},
+  { tag:"共通点で断定", build:(t)=>pick([
+      `${t}がうまくいく人の共通点は、たった1つ。\n\n「誰に・何を・なぜ」を1行で言えること。\nここが曖昧だと、何をやっても刺さらない。`,
+      `${t}で伸びる人は、例外なく言語化がうまい。\n\n感覚を言葉にできた瞬間、再現性が生まれる。`,
+    ])},
+  { tag:"問いかけ", build:(t)=>pick([
+      `質問です。\n\nあなたの${t}、今日の判断を1つでも変えましたか？\n\n変えてないなら、それは飾り。まだ機能していない。`,
+      `${t}、誰のためにやっていますか？\n\nここに即答できないとき、人は他人の正解を生きている。`,
+    ])},
+  { tag:"あるある（保存される）", build:(t)=>pick([
+      `${t}でやりがちな失敗、3つ。\n\n・量で解決しようとする\n・他人の正解を真似る\n・決める前に動き出す\n\n全部、前提の言語化をサボったツケ。`,
+      `${t}が止まる人の口ぐせ。\n\n「とりあえずやってみます」\n\n方向を決めずに走るから、努力が成果にならない。`,
+    ])},
+  { tag:"本音・断言", build:(t)=>pick([
+      `はっきり言う。\n\n${t}に才能はいらない。必要なのは設計だけ。\nセンスに見えるものの正体は、再現できる手順だ。`,
+      `${t}の答えは、外じゃなく中にある。\n\nノウハウを足す前に、自分の言葉を1行に削ぎ落とせ。`,
+    ])},
 ];
 
-const CLOSES = ["詳しくはプロフィールから。","あなたはどうですか？","保存して、また見返してください。","一緒に設計しませんか。",""];
+/* ====== 長文パターン（情報が濃い・構造化） ====== */
+const LONG = [
+  { tag:"5ステップ（保存版）", build:(t,m)=>
+`${t}を本気で機能させる5ステップ👇
 
-let lenMode = "both";
+①目的を1行にする（誰の何のためか）
+②競合が言えない独自性を1つ決める
+③「やらないこと」を決める
+④毎日の判断に使える言葉にする
+⑤全員が同じ言葉で語れる状態にする
 
-function pick(a){ return a[Math.floor(Math.random()*a.length)]; }
+ほとんどの人は①で止まる。
+でも①を超えた瞬間、②〜⑤は一気に進む。
 
-function buildPost(p, theme, msg){
-  const t = theme || "これ";
-  let body;
-  if(msg && msg.trim()){
-    body = msg.trim();
-  } else {
-    body = pick(p.def);
-    if(p.useThemeInDef) body = body.replace("近道", t+"に近道").replace("気合い", t+"は気合い");
-  }
-  const hook = p.hook ? p.hook(t) : "";
-  let post = hook ? (hook + "\n\n" + body) : body;
-  // 長文だけ締めを時々付ける
-  if(p.len==="long" && Math.random()<0.6){ const c=pick(CLOSES); if(c) post += "\n\n"+c; }
-  return post;
-}
+${m||"飾りじゃなく、機能させる。それが本物の設計。"}
 
-function weightedLen(s){ let n=0; for(const ch of s){ n += (ch.charCodeAt(0)<=0x7f)?1:2; } return n; }
+保存して、自社に当てはめてみてください。`},
+  { tag:"ストーリー", build:(t,m)=>
+`先日、${t}に悩む経営者と話した。
+
+「やることは全部やってる。でも結果が出ない」
+
+話して分かった。問題は量じゃなく、前提だった。
+「何のために」が曖昧なまま、手段だけ増やしていた。
+
+そこで目的を1行に絞った。
+たった1行。でもその日から判断が速くなり、チームの足並みが揃い始めた。
+
+${m||"遠回りに見えて、これが最短だった。"}`},
+  { tag:"Before→After", build:(t,m)=>
+`${t}が変わる前と後。
+
+【Before】
+・判断軸がバラバラ
+・優秀な人ほど早く辞める
+・努力が成果に変わらない
+
+【After】
+・全員が同じ基準で動く
+・採用も評価も迷わない
+・同じ努力で結果が出る
+
+違いを生んだのは、たった1つ。
+「前提」を言葉にしたこと。
+
+${m||"順番を変えるだけ。やることは増やさない。"}`},
+  { tag:"逆説×深掘り", build:(t,m)=>
+`${t}、ほとんどの人が誤解している。
+
+「センス」や「才能」の問題だと思っている。
+でも違う。9割は、始める前の設計で決まる。
+
+・誰に届けるか
+・なぜ自分たちか
+・何を約束するか
+
+この3つを言葉にした瞬間、やることが明確になり、迷いが消える。
+
+${m||"才能の前に、設計。これが再現性の正体。"}
+
+刺さったら保存推奨。`},
+];
+
+let lenMode="both";
+const jpLen = s => [...s].length;
 
 function render(){
-  const theme = document.getElementById('theme').value.trim();
-  const msg = document.getElementById('msg').value;
-  const cards = document.getElementById('cards');
-  cards.innerHTML = "";
-  const list = PATTERNS.filter(p => lenMode==="both" ? true : p.len===lenMode);
-  list.forEach(p=>{
-    const text = buildPost(p, theme, msg);
-    const w = weightedLen(text);
-    const cls = w>280?'over':(w>240?'warn':'ok');
-    const div = document.createElement('div');
-    div.className = 'pcard';
-    div.innerHTML = `
-      <span class="ptag">${p.tag}</span>
+  const t = document.getElementById('theme').value.trim() || "理念設計";
+  const m = document.getElementById('msg').value.trim();
+  const box = document.getElementById('cards'); box.innerHTML="";
+  let items=[];
+  if(lenMode!=="long") items=items.concat(SHORT.map(p=>({...p,len:"short"})));
+  if(lenMode!=="short") items=items.concat(LONG.map(p=>({...p,len:"long"})));
+  items.forEach(p=>{
+    const text = p.build(t,m);
+    const n = jpLen(text);
+    let cntTxt, cls;
+    if(p.len==="short"){ cls = n>140?'over':(n>120?'warn':'ok'); cntTxt=`${n}/140字`; }
+    else { cls = n>140?'warn':'ok'; cntTxt=`${n}字`+(n>140?'（X Premium想定）':''); }
+    const div=document.createElement('div'); div.className='pcard';
+    div.innerHTML=`<span class="ptag ${p.len}">${p.len==="short"?"短文":"長文"}・${p.tag}</span>
       <div class="ptext"></div>
-      <div class="pbar">
-        <span class="cnt ${cls}">重み付き ${w}/280（実${[...text].length}字）</span>
-        <span class="pbtns">
-          <button class="copy">📋 コピー</button>
-          <button class="openx">↗ Xで開く</button>
-        </span>
-      </div>`;
-    div.querySelector('.ptext').textContent = text;
+      <div class="pbar"><span class="cnt ${cls}">${cntTxt}</span>
+      <span class="pbtns"><button class="copy">📋 コピー</button><button class="openx">↗ Xで開く</button></span></div>`;
+    div.querySelector('.ptext').textContent=text;
     div.querySelector('.copy').addEventListener('click',()=>copyText(text));
     div.querySelector('.openx').addEventListener('click',()=>window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank'));
-    cards.appendChild(div);
+    box.appendChild(div);
   });
 }
+function copyText(t){ if(navigator.clipboard){navigator.clipboard.writeText(t).then(showToast).catch(()=>legacyCopy(t));} else legacyCopy(t); }
+function legacyCopy(t){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();showToast();}
+function showToast(){const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1400);}
 
-function copyText(t){
-  navigator.clipboard?.writeText(t).then(showToast).catch(()=>{ legacyCopy(t); });
-}
-function legacyCopy(t){ const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); showToast(); }
-function showToast(){ const el=document.getElementById('toast'); el.classList.add('show'); setTimeout(()=>el.classList.remove('show'),1400); }
-
-document.querySelectorAll('#presets .chip').forEach(c=>c.addEventListener('click',()=>{ document.getElementById('theme').value=c.textContent; render(); }));
-document.querySelectorAll('#lenSeg button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('#lenSeg button').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active'); lenMode=b.dataset.len; render();
-}));
-document.getElementById('genBtn').addEventListener('click', render);
-document.getElementById('theme').addEventListener('keydown', e=>{ if(e.key==='Enter') render(); });
-
+document.querySelectorAll('#presets .chip').forEach(c=>c.addEventListener('click',()=>{document.getElementById('theme').value=c.textContent;render();}));
+document.querySelectorAll('#lenSeg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#lenSeg button').forEach(x=>x.classList.remove('active'));b.classList.add('active');lenMode=b.dataset.len;render();}));
+document.getElementById('genBtn').addEventListener('click',render);
+document.getElementById('theme').addEventListener('keydown',e=>{if(e.key==='Enter')render();});
 render();
 </script>
 </body>
