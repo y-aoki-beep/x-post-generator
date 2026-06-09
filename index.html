@@ -14,46 +14,59 @@
     font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue","Hiragino Sans","Noto Sans JP",sans-serif;
     line-height:1.7;-webkit-font-smoothing:antialiased;padding:0 20px 80px;}
   .wrap{max-width:720px;margin:0 auto;}
-  header{text-align:center;padding:60px 0 30px;}
+  header{text-align:center;padding:56px 0 26px;}
   .eyebrow{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--blue);margin-bottom:10px;}
-  h1{font-size:clamp(30px,6vw,46px);font-weight:700;letter-spacing:-.022em;margin:0 0 12px;line-height:1.1;}
-  .lead{font-size:17px;color:var(--sub);margin:0 auto;max-width:560px;}
-  .tips{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px;font-size:13px;color:var(--sub);margin-bottom:24px;line-height:1.7;}
+  h1{font-size:clamp(28px,6vw,44px);font-weight:700;letter-spacing:-.022em;margin:0 0 12px;line-height:1.1;}
+  .lead{font-size:16px;color:var(--sub);margin:0 auto;max-width:560px;}
+  h2{font-size:20px;font-weight:700;letter-spacing:-.01em;margin:40px 0 14px;}
+  .tips{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px;font-size:13px;color:var(--sub);margin-bottom:20px;line-height:1.7;}
   .tips b{color:var(--ink);font-weight:600;}
-  .field{margin-bottom:18px;}
+  details.ai{background:#fff;border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin-bottom:22px;}
+  details.ai summary{cursor:pointer;font-weight:600;padding:12px 0;font-size:15px;list-style:none;}
+  details.ai summary::-webkit-details-marker{display:none;}
+  details.ai summary::before{content:"⚙️ ";}
+  .field{margin-bottom:16px;}
   .field>label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;}
-  input[type=text],textarea{width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);
-    border-radius:12px;padding:13px 15px;font-size:16px;font-family:inherit;resize:vertical;transition:border .15s,box-shadow .15s;}
+  input[type=text],input[type=password],textarea,select{width:100%;background:var(--card);color:var(--ink);border:1px solid var(--line);
+    border-radius:12px;padding:12px 14px;font-size:16px;font-family:inherit;resize:vertical;transition:border .15s,box-shadow .15s;}
   input::placeholder,textarea::placeholder{color:#a1a1a6;}
-  input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.15);}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.15);}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
   .chip{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:980px;font-size:13px;cursor:pointer;user-select:none;transition:.15s;}
   .chip:hover{border-color:var(--blue);color:var(--blue);}
   .seg{display:inline-flex;background:#e8e8ed;border-radius:11px;padding:3px;gap:2px;}
   .seg button{background:transparent;color:var(--ink);border:none;padding:8px 16px;font-size:13px;cursor:pointer;font-family:inherit;border-radius:9px;font-weight:500;transition:.15s;}
   .seg button.active{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12);font-weight:600;}
-  .genrow{margin:26px 0 30px;}
-  button.gen{width:100%;background:var(--blue);color:#fff;border:none;border-radius:14px;padding:16px;font-size:17px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;}
-  button.gen:hover{background:var(--blue-d);} button.gen:active{transform:scale(.99);}
+  button.gen{width:100%;background:var(--blue);color:#fff;border:none;border-radius:14px;padding:15px;font-size:16px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s;margin:18px 0 8px;}
+  button.gen:hover{background:var(--blue-d);} button.gen:active{transform:scale(.99);} button.gen:disabled{opacity:.5;cursor:default;}
+  button.gen.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue);}
   .cards{display:flex;flex-direction:column;gap:16px;}
-  .pcard{background:var(--card);border:1px solid #ececec;border-radius:18px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04);}
+  .pcard{background:var(--card);border:1px solid #ececec;border-radius:18px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04);}
   .ptag{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);background:rgba(0,113,227,.1);padding:4px 11px;border-radius:980px;margin-bottom:12px;}
-  .ptag.long{color:#6e6e73;background:#f0f0f2;}
-  .ptext{white-space:pre-wrap;font-size:16px;line-height:1.95;letter-spacing:.01em;}
-  .pbar{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:10px;flex-wrap:wrap;border-top:1px solid #f0f0f2;padding-top:14px;}
+  .ptag.long{color:#6e6e73;background:#f0f0f2;} .ptag.ai{color:#fff;background:var(--gold);}
+  .ptext{white-space:pre-wrap;font-size:16px;line-height:1.95;letter-spacing:.01em;outline:none;border-radius:8px;padding:2px;}
+  .ptext:focus{background:#f7faff;box-shadow:0 0 0 2px rgba(0,113,227,.25);}
+  .editnote{font-size:11px;color:var(--sub);margin-top:6px;}
+  .pbar{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px;flex-wrap:wrap;border-top:1px solid #f0f0f2;padding-top:12px;}
   .cnt{font-size:12px;font-weight:600;color:var(--sub);} .cnt.ok{color:var(--green);} .cnt.warn{color:var(--orange);} .cnt.over{color:var(--red);}
   .pbtns{display:flex;gap:8px;flex-wrap:wrap;}
-  .pbtns button{background:var(--fill);color:var(--ink);border:1px solid var(--line);border-radius:980px;padding:8px 15px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;transition:.15s;}
+  .pbtns button{background:var(--fill);color:var(--ink);border:1px solid var(--line);border-radius:980px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;transition:.15s;}
   .pbtns button:hover{background:#ececf0;}
-  .pbtns .openx{background:var(--ink);color:#fff;border-color:var(--ink);} .pbtns .openx:hover{opacity:.85;}
-  .pbtns .img{background:var(--gold);color:#fff;border-color:var(--gold);} .pbtns .img:hover{opacity:.9;}
-  .imgs{display:flex;gap:12px;overflow-x:auto;margin-top:16px;padding-bottom:6px;}
-  .imgs figure{margin:0;flex:0 0 auto;text-align:center;}
-  .imgs img{width:150px;border:1px solid var(--line);border-radius:10px;display:block;}
+  .pbtns .openx{background:var(--ink);color:#fff;border-color:var(--ink);} .pbtns .img{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .pbtns .rw{background:#fff;color:var(--gold);border-color:var(--gold);}
+  .imgs{display:flex;gap:12px;overflow-x:auto;margin-top:14px;padding-bottom:6px;}
+  .imgs figure{margin:0;flex:0 0 auto;text-align:center;} .imgs img{width:140px;border:1px solid var(--line);border-radius:10px;display:block;}
   .imgs a{display:inline-block;margin-top:6px;font-size:12px;color:var(--blue);text-decoration:none;font-weight:600;}
+  .rwbox{margin-top:12px;display:flex;flex-direction:column;gap:8px;}
+  .rwitem{background:#fbf7ec;border:1px solid #e6d9b5;border-radius:12px;padding:12px;font-size:15px;white-space:pre-wrap;}
+  .rwitem .mini{margin-top:8px;display:flex;gap:8px;}
+  .rwitem .mini button{background:#fff;border:1px solid var(--line);border-radius:980px;padding:5px 12px;font-size:12px;cursor:pointer;font-family:inherit;}
   .note{font-size:12px;color:var(--sub);margin-top:30px;text-align:center;line-height:1.8;} .note b{color:var(--ink);}
+  .err{color:var(--red);font-size:13px;margin-top:8px;font-weight:600;}
   .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:rgba(29,29,31,.92);color:#fff;padding:11px 22px;border-radius:980px;font-weight:600;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;backdrop-filter:blur(8px);}
   .toast.show{opacity:1;}
+  .spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:s .7s linear infinite;vertical-align:-2px;margin-right:6px;}
+  @keyframes s{to{transform:rotate(360deg);}}
 </style>
 </head>
 <body>
@@ -61,10 +74,32 @@
   <header>
     <div class="eyebrow">BLUESTOKE · X POST STUDIO</div>
     <h1>言葉で、まだ見ぬ世界を。</h1>
-    <p class="lead">テーマを入れるだけ。刺さるX投稿（短文140字／長文200・300・500字）に加え、投稿に合う画像・スライド資料も生成します。</p>
+    <p class="lead">テンプレ生成＋AIで「自分らしく」。参考アカウント風の生成、引用RT文づくり、画像・資料化まで。</p>
   </header>
 
-  <div class="tips">🔥 <b>バズの原則</b>：①最初の1行で止める　②具体・数字・断定　③短文＝1メッセージ／長文＝箇条書きで構造化　④本文にURLは入れない・ハッシュタグは盛らない</div>
+  <div class="tips">🔥 <b>バズの原則</b>：①最初の1行で止める　②具体・数字・断定　③短文＝1メッセージ／長文＝箇条書き　④本文にURLを入れない・ハッシュタグは盛らない</div>
+
+  <details class="ai" id="aiSettings">
+    <summary>AI設定（自分らしいリライト・参考アカウント風生成・引用RTに必須）</summary>
+    <div class="field" style="margin-top:8px;">
+      <label>Anthropic APIキー <span style="color:var(--sub);font-weight:400;">（このブラウザにのみ保存。外部送信なし）</span></label>
+      <input type="password" id="apiKey" placeholder="sk-ant-...">
+    </div>
+    <div class="field">
+      <label>使うモデル</label>
+      <select id="model">
+        <option value="claude-opus-4-8" selected>Claude Opus 4.8（最高品質・既定）</option>
+        <option value="claude-sonnet-4-6">Claude Sonnet 4.6（バランス・コスト減）</option>
+        <option value="claude-haiku-4-5">Claude Haiku 4.5（最安・速い）</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>自分の文体サンプル <span style="color:var(--sub);font-weight:400;">（自分のツイートを2〜4個貼る。🤖自分風リライトで使用）</span></label>
+      <textarea id="styleSamples" rows="4" placeholder="例）&#10;・理念は飾りじゃない。毎日の判断に効いて初めて意味がある。&#10;・売れないのは商品のせいじゃない。前提の言語化をサボってるだけ。"></textarea>
+    </div>
+    <button class="gen ghost" id="saveAI" style="margin:6px 0 12px;">設定を保存</button>
+    <div class="note" style="text-align:left;margin-top:0;">🔐 キーはあなたのブラウザの localStorage に保存され、Anthropic API への呼び出し以外に送信されません。共有PCでは使用後に「設定を保存」欄を空にして保存してください。</div>
+  </details>
 
   <div class="field">
     <label>テーマ / キーワード</label>
@@ -75,7 +110,7 @@
     </div>
   </div>
   <div class="field">
-    <label>核メッセージ <span style="color:var(--sub);font-weight:400;">（任意・末尾に追記されます）</span></label>
+    <label>核メッセージ <span style="color:var(--sub);font-weight:400;">（任意・末尾に追記）</span></label>
     <textarea id="msg" rows="2" placeholder="一番伝えたい主張を1〜2文で。空欄でもBLUESTOKE風に仕上げます。"></textarea>
   </div>
   <div class="field" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
@@ -86,13 +121,28 @@
       <button data-len="long">長文（200/300/500字）</button>
     </div>
   </div>
-
-  <div class="genrow"><button class="gen" id="genBtn">投稿文を生成</button></div>
+  <button class="gen" id="genBtn">投稿文を生成</button>
   <div class="cards" id="cards"></div>
 
+  <h2>🤖 参考アカウント風に生成</h2>
+  <div class="field">
+    <textarea id="refPosts" rows="4" placeholder="真似したいアカウントの投稿を2〜4個、改行で貼り付け（URLからの自動取得はAPIクレジットが必要なため、本文をコピペしてください）"></textarea>
+  </div>
+  <button class="gen ghost" id="refBtn">この文体で投稿を生成（上のテーマを使用）</button>
+  <div class="err" id="refErr"></div>
+  <div class="cards" id="refCards" style="margin-top:14px;"></div>
+
+  <h2>🔁 引用リツイート文を生成</h2>
+  <div class="field">
+    <textarea id="qtPost" rows="3" placeholder="引用RTしたい相手のツイート本文を貼り付け"></textarea>
+  </div>
+  <button class="gen ghost" id="qtBtn">引用コメントを3案つくる</button>
+  <div class="err" id="qtErr"></div>
+  <div class="cards" id="qtCards" style="margin-top:14px;"></div>
+
   <p class="note">
-    オフライン・無料。画像は <b>1080×1350</b> のPNGで保存できます（短文＝1枚／長文＝スライド資料・複数枚）。<br>
-    <b>長文（140字超）はX Premium必須</b>。未加入なら短文＋画像での投稿がおすすめ。<br>
+    オフラインで動く部分：テンプレ生成・図解/資料化・インライン編集。<br>
+    AIが必要な部分（自分風リライト・参考アカウント風・引用RT）：上の<b>AI設定</b>でAPIキーが必要（従量課金）。<br>
     動かすURL：<b>https://y-aoki-beep.github.io/x-post-generator/</b>
   </p>
 </div>
@@ -101,286 +151,197 @@
 <script>
 const pick=a=>a[Math.floor(Math.random()*a.length)];
 const jpLen=s=>[...s].length;
+const $=id=>document.getElementById(id);
 
-/* ===== 短文（120〜140字・1メッセージ） ===== */
+/* ===== 設定（localStorage） ===== */
+function loadAI(){
+  $('apiKey').value=localStorage.getItem('bs_key')||'';
+  $('model').value=localStorage.getItem('bs_model')||'claude-opus-4-8';
+  $('styleSamples').value=localStorage.getItem('bs_style')||'';
+}
+$('saveAI').addEventListener('click',()=>{
+  localStorage.setItem('bs_key',$('apiKey').value.trim());
+  localStorage.setItem('bs_model',$('model').value);
+  localStorage.setItem('bs_style',$('styleSamples').value.trim());
+  showToast('AI設定を保存しました');
+});
+
+/* ===== 短文・長文テンプレ（前回と同じ・字数調整済み） ===== */
 const SHORT=[
  {tag:"逆説 × 順番",build:t=>pick([
-`${t}、頑張るほど空回りする人がいる。
-
-原因は努力の量じゃない。順番だ。
-「誰の・何のために」を1行で決める前に走るから、力が成果に変わらない。
-
-立派な言葉はいらない。明日の判断を1つ変える。それだけで、組織は同じ方向を向きはじめる。`,
-`${t}は、足し算より引き算で決まる。
-
-何を「やらないか」を言葉にできた人から、ブレが消えていく。
-あれもこれもは、結局なにも伝わらない。
-
-絞るのは怖い。でも、絞った1点だけが、人の記憶に残る。`])},
- {tag:"共通点 × 言語化",build:t=>
-`${t}が伸びる人の共通点は、たった1つ。
-
-「自分の言葉」を持っていること。
-ノウハウを足す前に、誰に・何を・なぜ届けるかを1行に削ぎ落とす。
-
-感覚が言葉になった瞬間、再現性が生まれる。だから人にも、チームにも、ちゃんと伝わる。`},
- {tag:"問いかけ × 機能",build:t=>
-`質問です。
-
-あなたの${t}は、今日の意思決定を1つでも変えましたか？
-
-変えていないなら、それは壁に貼った飾り。まだ機能していない。
-理念もブランドも、毎日の判断に効いて初めて意味を持つ。掲げて終わり、が一番もったいない。`},
- {tag:"あるある（保存される）",build:t=>
-`${t}でやりがちな失敗、3つ。
-
-・量や根性で解決しようとする
-・他人の正解をそのまま真似る
-・決める前に走り出してしまう
-
-全部、前提の言語化をサボったツケ。逆に言えば、ここを整えるだけで景色は一気に変わる。`},
- {tag:"本音 × 再現性",build:t=>
-`はっきり言う。
-
-${t}に、特別な才能はいらない。必要なのは設計だけだ。
-センスや空気感に見えるものの正体は、たいてい再現できる手順にすぎない。
-
-感性で消耗するのをやめて、仕組みに落とす。まだ見ぬ世界は、いつもその先にある。`},
+`${t}、頑張るほど空回りする人がいる。\n\n原因は努力の量じゃない。順番だ。\n「誰の・何のために」を1行で決める前に走るから、力が成果に変わらない。\n\n立派な言葉はいらない。明日の判断を1つ変える。それだけで、組織は同じ方向を向きはじめる。`,
+`${t}は、足し算より引き算で決まる。\n\n何を「やらないか」を言葉にできた人から、ブレが消えていく。\nあれもこれもは、結局なにも伝わらない。\n\n絞るのは怖い。でも、絞った1点だけが、人の記憶に残る。`])},
+ {tag:"共通点 × 言語化",build:t=>`${t}が伸びる人の共通点は、たった1つ。\n\n「自分の言葉」を持っていること。\nノウハウを足す前に、誰に・何を・なぜ届けるかを1行に削ぎ落とす。\n\n感覚が言葉になった瞬間、再現性が生まれる。だから人にも、チームにも、ちゃんと伝わる。`},
+ {tag:"問いかけ × 機能",build:t=>`質問です。\n\nあなたの${t}は、今日の意思決定を1つでも変えましたか？\n\n変えていないなら、それは壁に貼った飾り。まだ機能していない。\n理念もブランドも、毎日の判断に効いて初めて意味を持つ。掲げて終わり、が一番もったいない。`},
+ {tag:"あるある（保存される）",build:t=>`${t}でやりがちな失敗、3つ。\n\n・量や根性で解決しようとする\n・他人の正解をそのまま真似る\n・決める前に走り出してしまう\n\n全部、前提の言語化をサボったツケ。逆に言えば、ここを整えるだけで景色は一気に変わる。`},
+ {tag:"本音 × 再現性",build:t=>`はっきり言う。\n\n${t}に、特別な才能はいらない。必要なのは設計だけだ。\nセンスや空気感に見えるものの正体は、たいてい再現できる手順にすぎない。\n\n感性で消耗するのをやめて、仕組みに落とす。まだ見ぬ世界は、いつもその先にある。`},
 ];
-
-/* ===== 長文：毎回「約200字／約300字／500字以上」（文字数調整済み） ===== */
 const LONG=[
  {tag:"約200字",build:t=>pick([
-`${t}を「機能する状態」にする順番は、実はシンプルだ。
-
-①目的を1行にする（誰の・何のためか）
-②競合が言えない独自性を1つ決める
-③やらないことを決める
-④毎日の判断に使える言葉にする
-⑤全員が同じ言葉で語れる状態にする
-
-多くの人は①で止まってしまう。
-でも①を本気で超えた瞬間、残りは驚くほど速く進みはじめる。
-
-立派な言葉はいらない。明日の判断を1つ変えること。
-言葉は、飾るためじゃなく、判断を変えるためにある。`,
-`${t}でいちばん大事なのは、足すことじゃなく削ることだ。
-
-情報も、選択肢も、メッセージも。
-盛れば盛るほど、結局なにも伝わらなくなる。
-あれも大事、これも外せない——その親切心が、いちばん刺さらない原因になる。
-
-だから「誰に・何を・なぜ」を、たった1行に削ぎ落とす。
-そこまで絞れた人から、ブレが消え、言葉が強くなる。
-
-絞るのは怖い。でも、絞った1点だけが記憶に残り、人を動かす。`])},
+`${t}を「機能する状態」にする順番は、実はシンプルだ。\n\n①目的を1行にする（誰の・何のためか）\n②競合が言えない独自性を1つ決める\n③やらないことを決める\n④毎日の判断に使える言葉にする\n⑤全員が同じ言葉で語れる状態にする\n\n多くの人は①で止まってしまう。\nでも①を本気で超えた瞬間、残りは驚くほど速く進みはじめる。\n\n立派な言葉はいらない。明日の判断を1つ変えること。\n言葉は、飾るためじゃなく、判断を変えるためにある。`,
+`${t}でいちばん大事なのは、足すことじゃなく削ることだ。\n\n情報も、選択肢も、メッセージも。\n盛れば盛るほど、結局なにも伝わらなくなる。\nあれも大事、これも外せない——その親切心が、いちばん刺さらない原因になる。\n\nだから「誰に・何を・なぜ」を、たった1行に削ぎ落とす。\nそこまで絞れた人から、ブレが消え、言葉が強くなる。\n\n絞るのは怖い。でも、絞った1点だけが記憶に残り、人を動かす。`])},
  {tag:"約300字",build:t=>pick([
-`${t}が変わる前と、後。これは実際によく起きる変化だ。
-
-【Before】
-・判断軸が人によってバラバラ
-・優秀な人ほど早く辞めていく
-・努力しても成果に結びつかない
-・施策が増えるほど現場が混乱する
-
-【After】
-・全員が同じ基準で迷わず動ける
-・採用も評価も、軸で即決できる
-・同じ努力が、ちゃんと成果になる
-・やることが減って、結果が増える
-
-違いを生んだのは、たった1つ。
-壁に貼る言葉ではなく、「前提」を誰でも使える言葉にしたこと。
-
-順番を変えるだけでいい。やることは増やさない。むしろ減る。
-増やすほど現場は動けなくなり、減らすほど速くなる。
-
-これは才能の差じゃない。設計の差だ。`,
-`先日、${t}に悩む経営者と話した。
-
-「やれることは全部やってる。広告も、採用も、商品改善も。なのに結果が出ない」
-
-聞くほどに分かった。問題は努力の量じゃなく、前提だった。
-「何のために」が曖昧なまま、手段だけが増え続けていた。
-
-そこで一度すべてを止めて、目的をたった1行に絞ってもらった。
-
-すると翌日から、判断が速くなり、会議の空気が変わり、チームの言葉から迷いが消えた。
-やることは増えていない。むしろ減った。なのに、結果は伸びた。
-特別なことは何もしていない。ただ、前提を言葉にしただけだ。
-
-足すことじゃない。削って、1行にすること。
-遠回りに見えて、言語化こそ最短だった。`])},
+`${t}が変わる前と、後。これは実際によく起きる変化だ。\n\n【Before】\n・判断軸が人によってバラバラ\n・優秀な人ほど早く辞めていく\n・努力しても成果に結びつかない\n・施策が増えるほど現場が混乱する\n\n【After】\n・全員が同じ基準で迷わず動ける\n・採用も評価も、軸で即決できる\n・同じ努力が、ちゃんと成果になる\n・やることが減って、結果が増える\n\n違いを生んだのは、たった1つ。\n壁に貼る言葉ではなく、「前提」を誰でも使える言葉にしたこと。\n\n順番を変えるだけでいい。やることは増やさない。むしろ減る。\n増やすほど現場は動けなくなり、減らすほど速くなる。\n\nこれは才能の差じゃない。設計の差だ。`,
+`先日、${t}に悩む経営者と話した。\n\n「やれることは全部やってる。広告も、採用も、商品改善も。なのに結果が出ない」\n\n聞くほどに分かった。問題は努力の量じゃなく、前提だった。\n「何のために」が曖昧なまま、手段だけが増え続けていた。\n\nそこで一度すべてを止めて、目的をたった1行に絞ってもらった。\n\nすると翌日から、判断が速くなり、会議の空気が変わり、チームの言葉から迷いが消えた。\nやることは増えていない。むしろ減った。なのに、結果は伸びた。\n特別なことは何もしていない。ただ、前提を言葉にしただけだ。\n\n足すことじゃない。削って、1行にすること。\n遠回りに見えて、言語化こそ最短だった。`])},
  {tag:"500字以上",build:t=>pick([
-`${t}を「飾り」で終わらせず、本当に機能させるための全体像を書く。
-
-ほとんどの${t}が機能しないのは、能力やセンスの問題じゃない。
-始める前の設計を飛ばして、いきなり手を動かすからだ。だから努力が成果に変わらない。
-
-順番はこうだ。
-
-①目的を1行にする
-誰の・何のために存在するのか。業界用語を抜いて、中学生でも分かる言葉で。ここが曖昧なまま進むと、すべての判断がブレていく。
-
-②競合が言えない独自性を決める
-「うちもできます」で終わる強みは、強みじゃない。他社が口にできない一点を探し、そこに資源を集める。
-
-③やらないことを決める
-何をやるかより、何を捨てるか。捨てた瞬間に、らしさが立ち上がる。
-
-④毎日の判断に使える言葉に翻訳する
-壁に貼って終わりではなく、明日の意思決定を1つでも変える言葉にする。
-
-⑤全員が同じ言葉で語れる状態にする
-代表だけが熱いのではなく、現場の全員が同じ言葉で語れて初めて、組織は同じ方向を向く。
-
-①で止まる人がほとんどだ。
-でも①を本気で超えた瞬間、②〜⑤は驚くほど速く進みはじめる。
-
-言葉は、飾るためじゃない。判断を変え、人を動かし、組織を前に進めるためにある。
-それが、まだ見ぬ世界への最短ルートだ。`,
-`${t}について、たくさんの経営者と向き合ってきて、確信していることがある。
-
-うまくいかない原因は、いつも同じ場所にある。
-「やり方」ではなく、「前提」だ。
-
-先日も、こんな相談を受けた。
-「やれることは全部やった。広告も、採用も、商品改善も。なのに、結果が出ない」
-
-話を聞くほど、問題は努力の量じゃないと分かった。
-何のためにが曖昧なまま、手段だけが積み上がっていた。
-だから現場は疲弊し、優秀な人ほど静かに辞めていく。
-本人たちはサボっていない。むしろ真面目に、全力で走っている。だからこそ、方向がズレていることに気づけない。
-
-そこで、いったん全部止めて、たった1つの問いに戻ってもらった。
-
-「あなたの会社は、誰の・何のために存在するのか？」
-
-最初は、言葉に詰まる。当然だ。普段、考えていないから。
-でも、何度も削って、ようやく1行になった瞬間、その人の表情が変わった。
-
-翌日から、判断が速くなった。
-会議の空気が変わり、チームの言葉が揃いはじめた。
-やることは増えていない。むしろ減った。なのに、結果は伸びた。
-
-遠回りに見えて、言語化こそ最短だった。
-理念は飾りじゃない。毎日の判断を変える、いちばん実用的な経営の道具だ。`])},
+`${t}を「飾り」で終わらせず、本当に機能させるための全体像を書く。\n\nほとんどの${t}が機能しないのは、能力やセンスの問題じゃない。\n始める前の設計を飛ばして、いきなり手を動かすからだ。だから努力が成果に変わらない。\n\n順番はこうだ。\n\n①目的を1行にする\n誰の・何のために存在するのか。業界用語を抜いて、中学生でも分かる言葉で。ここが曖昧なまま進むと、すべての判断がブレていく。\n\n②競合が言えない独自性を決める\n「うちもできます」で終わる強みは、強みじゃない。他社が口にできない一点を探し、そこに資源を集める。\n\n③やらないことを決める\n何をやるかより、何を捨てるか。捨てた瞬間に、らしさが立ち上がる。\n\n④毎日の判断に使える言葉に翻訳する\n壁に貼って終わりではなく、明日の意思決定を1つでも変える言葉にする。\n\n⑤全員が同じ言葉で語れる状態にする\n代表だけが熱いのではなく、現場の全員が同じ言葉で語れて初めて、組織は同じ方向を向く。\n\n①で止まる人がほとんどだ。\nでも①を本気で超えた瞬間、②〜⑤は驚くほど速く進みはじめる。\n\n言葉は、飾るためじゃない。判断を変え、人を動かし、組織を前に進めるためにある。\nそれが、まだ見ぬ世界への最短ルートだ。`,
+`${t}について、たくさんの経営者と向き合ってきて、確信していることがある。\n\nうまくいかない原因は、いつも同じ場所にある。\n「やり方」ではなく、「前提」だ。\n\n先日も、こんな相談を受けた。\n「やれることは全部やった。広告も、採用も、商品改善も。なのに、結果が出ない」\n\n話を聞くほど、問題は努力の量じゃないと分かった。\n何のためにが曖昧なまま、手段だけが積み上がっていた。\nだから現場は疲弊し、優秀な人ほど静かに辞めていく。\n本人たちはサボっていない。むしろ真面目に、全力で走っている。だからこそ、方向がズレていることに気づけない。\n\nそこで、いったん全部止めて、たった1つの問いに戻ってもらった。\n\n「あなたの会社は、誰の・何のために存在するのか？」\n\n最初は、言葉に詰まる。当然だ。普段、考えていないから。\nでも、何度も削って、ようやく1行になった瞬間、その人の表情が変わった。\n\n翌日から、判断が速くなった。\n会議の空気が変わり、チームの言葉が揃いはじめた。\nやることは増えていない。むしろ減った。なのに、結果は伸びた。\n\n遠回りに見えて、言語化こそ最短だった。\n理念は飾りじゃない。毎日の判断を変える、いちばん実用的な経営の道具だ。`])},
 ];
 
 let lenMode="both";
 
+/* ===== カード生成（共通） ===== */
+function countMeta(text,kind){
+  const n=jpLen(text);
+  if(kind==="long") return {cls:'ok',txt:`${n}字`+(n>140?'（X Premium必須）':'')};
+  return {cls:n>140?'over':(n>=120?'ok':'warn'),txt:`${n} / 140字`+(n>140?' ⚠超過':(n>=120?' ✓濃いめ':''))};
+}
+function makeCard(text,tagLabel,kind,extraClass){
+  const div=document.createElement('div'); div.className='pcard';
+  div.innerHTML=`<span class="ptag ${extraClass||''}">${tagLabel}</span>
+    <div class="ptext" contenteditable="true" spellcheck="false"></div>
+    <div class="editnote">↑ クリックで直接編集できます（語尾の修正など）。文字数・画像も連動します。</div>
+    <div class="pbar"><span class="cnt"></span>
+    <span class="pbtns">
+      <button class="copy">コピー</button>
+      <button class="rw">🤖自分風</button>
+      <button class="img">${kind==="long"?"🖼 資料":"🖼 画像"}</button>
+      <button class="openx">Xで開く</button>
+    </span></div>
+    <div class="rwbox"></div>
+    <div class="imgs"></div>`;
+  const pt=div.querySelector('.ptext'); pt.textContent=text;
+  const cnt=div.querySelector('.cnt');
+  const refresh=()=>{const m=countMeta(pt.textContent,kind);cnt.className='cnt '+m.cls;cnt.textContent=m.txt;};
+  refresh(); pt.addEventListener('input',refresh);
+  div.querySelector('.copy').addEventListener('click',()=>copyText(pt.textContent));
+  div.querySelector('.openx').addEventListener('click',()=>openX(pt.textContent));
+  div.querySelector('.img').addEventListener('click',()=>makeImages(pt.textContent,kind,div.querySelector('.imgs')));
+  div.querySelector('.rw').addEventListener('click',e=>selfRewrite(pt.textContent,div.querySelector('.rwbox'),e.target));
+  return div;
+}
+
 function render(){
-  const t=document.getElementById('theme').value.trim()||"理念設計";
-  const m=document.getElementById('msg').value.trim();
-  const box=document.getElementById('cards'); box.innerHTML="";
+  const t=$('theme').value.trim()||"理念設計";
+  const m=$('msg').value.trim();
+  const box=$('cards'); box.innerHTML="";
   let items=[];
-  if(lenMode!=="long") items=items.concat(SHORT.map(p=>({...p,len:"short"})));
-  if(lenMode!=="short") items=items.concat(LONG.map(p=>({...p,len:"long"})));
+  if(lenMode!=="long") items=items.concat(SHORT.map(p=>({...p,kind:"short"})));
+  if(lenMode!=="short") items=items.concat(LONG.map(p=>({...p,kind:"long"})));
   items.forEach(p=>{
     let text=p.build(t); if(m) text+="\n\n"+m;
-    const n=jpLen(text); let cntTxt,cls;
-    if(p.len==="short"){cls=n>140?'over':(n>=120?'ok':'warn');cntTxt=`${n} / 140字`+(n>140?' ⚠超過':(n>=120?' ✓濃いめ':''));}
-    else{cls='ok';cntTxt=`${n}字`+(n>140?'（X Premium必須）':'');}
-    const div=document.createElement('div'); div.className='pcard';
-    div.innerHTML=`<span class="ptag ${p.len}">${p.len==="short"?"短文":"長文"} · ${p.tag}</span>
-      <div class="ptext"></div>
-      <div class="pbar"><span class="cnt ${cls}">${cntTxt}</span>
-      <span class="pbtns">
-        <button class="copy">コピー</button>
-        <button class="img">${p.len==="short"?"🖼 画像を生成":"🖼 資料を生成"}</button>
-        <button class="openx">Xで開く</button>
-      </span></div>
-      <div class="imgs"></div>`;
-    div.querySelector('.ptext').textContent=text;
-    div.querySelector('.copy').addEventListener('click',()=>copyText(text));
-    div.querySelector('.openx').addEventListener('click',()=>window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank'));
-    div.querySelector('.img').addEventListener('click',()=>makeImages(text,p.len,div.querySelector('.imgs')));
-    box.appendChild(div);
+    box.appendChild(makeCard(text,(p.kind==="short"?"短文":"長文")+" · "+p.tag,p.kind));
   });
 }
 
-/* ===== 画像生成（Canvas） ===== */
-function wrapLines(ctx,text,maxW){
-  const out=[];
-  text.split('\n').forEach(seg=>{
-    if(seg===''){out.push('');return;}
-    let line='';
-    for(const ch of seg){
-      if(ctx.measureText(line+ch).width>maxW && line){out.push(line);line=ch;}
-      else line+=ch;
-    }
-    out.push(line);
+/* ===== AI 呼び出し（Anthropic Messages API・ブラウザ直叩き） ===== */
+function aiCfg(){return {key:(localStorage.getItem('bs_key')||$('apiKey').value).trim(),model:localStorage.getItem('bs_model')||$('model').value};}
+async function callClaude(system,user,schema){
+  const {key,model}=aiCfg();
+  if(!key) throw new Error('AI設定でAPIキーを入力・保存してください。');
+  const res=await fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'content-type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model,max_tokens:2000,system,messages:[{role:'user',content:user}],output_config:{format:{type:'json_schema',schema}}})
   });
-  return out;
+  if(!res.ok){let d='';try{d=JSON.stringify(await res.json());}catch(e){d=await res.text();} throw new Error('API '+res.status+'：'+d.slice(0,300));}
+  const data=await res.json();
+  const txt=(data.content||[]).filter(b=>b.type==='text').map(b=>b.text).join('');
+  return JSON.parse(txt);
 }
+const POSTS_SCHEMA={type:'object',properties:{posts:{type:'array',items:{type:'string'}}},required:['posts'],additionalProperties:false};
+
+/* 自分風リライト */
+async function selfRewrite(text,box,btn){
+  const style=(localStorage.getItem('bs_style')||$('styleSamples').value).trim();
+  if(!style){alert('AI設定で「自分の文体サンプル」を入れて保存してください。');$('aiSettings').open=true;return;}
+  box.innerHTML='<div class="rwitem"><span class="spin"></span>自分の文体に書き換え中…</div>';
+  const sys='あなたは日本語X(旧Twitter)のコピーライター。書き手の文体サンプルを分析し、その人になりきって与えられた投稿を「語尾・言い回し・トーン・改行・絵文字の使い方」まで寄せて書き換える。意味は保持。各案140字以内。出力はJSONのみ。';
+  const user=`# 文体サンプル\n${style}\n\n# 書き換える投稿\n${text}\n\nこの投稿を、上の文体サンプルの書き手らしく書き換えた案を3つ、postsに入れて返して。`;
+  try{
+    const out=await callClaude(sys,user,POSTS_SCHEMA);
+    box.innerHTML='';
+    (out.posts||[]).forEach(p=>box.appendChild(rwItem(p)));
+  }catch(e){box.innerHTML='<div class="err">'+e.message+'</div>';}
+}
+function rwItem(text){
+  const d=document.createElement('div'); d.className='rwitem';
+  d.textContent=text;
+  const mini=document.createElement('div'); mini.className='mini';
+  const c=document.createElement('button'); c.textContent='コピー'; c.onclick=()=>copyText(text);
+  const x=document.createElement('button'); x.textContent='Xで開く'; x.onclick=()=>openX(text);
+  mini.appendChild(c); mini.appendChild(x); d.appendChild(mini);
+  return d;
+}
+
+/* 参考アカウント風に生成 */
+$('refBtn').addEventListener('click',async()=>{
+  const ref=$('refPosts').value.trim(); const t=$('theme').value.trim()||'理念設計'; const m=$('msg').value.trim();
+  const err=$('refErr'); const box=$('refCards'); err.textContent='';
+  if(!ref){err.textContent='参考にする投稿を貼り付けてください。';return;}
+  const btn=$('refBtn'); const orig=btn.textContent; btn.disabled=true; btn.innerHTML='<span class="spin"></span>生成中…';
+  const sys='あなたは日本語X(旧Twitter)のコピーライター。与えられた参考投稿群の文体・構成・フックの作り方・トーン・改行・絵文字の癖を分析し、その人になりきって、指定テーマの新規投稿を作る。バズ原則(最初の1行で止める/具体・断定/1投稿1メッセージ/本文にURLや過剰なハッシュタグを入れない)を守る。各投稿140字以内。出力はJSONのみ。';
+  const user=`# 参考アカウントの投稿\n${ref}\n\n# 書きたいテーマ\n${t}${m?`\n\n# 盛り込みたい主張\n${m}`:''}\n\nこのアカウントの文体で、テーマに沿った投稿を4つ、postsに入れて返して。`;
+  try{
+    const out=await callClaude(sys,user,POSTS_SCHEMA);
+    box.innerHTML='';
+    (out.posts||[]).forEach((p,i)=>box.appendChild(makeCard(p,'参考風 '+(i+1),'short','ai')));
+  }catch(e){err.textContent=e.message;}
+  btn.disabled=false; btn.textContent=orig;
+});
+
+/* 引用RT文を生成 */
+$('qtBtn').addEventListener('click',async()=>{
+  const src=$('qtPost').value.trim(); const err=$('qtErr'); const box=$('qtCards'); err.textContent='';
+  if(!src){err.textContent='引用したいツイート本文を貼り付けてください。';return;}
+  const btn=$('qtBtn'); const orig=btn.textContent; btn.disabled=true; btn.innerHTML='<span class="spin"></span>生成中…';
+  const style=(localStorage.getItem('bs_style')||$('styleSamples').value).trim();
+  const sys='あなたは日本語Xのコピーライター。引用リツイート(quote tweet)のコメントを作る。元投稿に価値を足す(自分の視点・経験・補足・健全な反論のいずれか)。共感の丸写しや要約だけは避ける。140字以内。BLUESTOKE(コーチング×ブランディング/理念設計の専門家)の中の人として、断定的で具体的に。'+(style?'書き手の文体サンプルがあれば寄せる。':'')+'出力はJSONのみ。';
+  const user=`# 引用元のツイート\n${src}${style?`\n\n# 自分の文体サンプル\n${style}`:''}\n\nこのツイートに対する引用RTコメントを、切り口を変えて3案、postsに入れて返して。`;
+  try{
+    const out=await callClaude(sys,user,POSTS_SCHEMA);
+    box.innerHTML='';
+    (out.posts||[]).forEach((p,i)=>box.appendChild(makeCard(p,'引用RT '+(i+1),'short','ai')));
+  }catch(e){err.textContent=e.message;}
+  btn.disabled=false; btn.textContent=orig;
+});
+
+/* ===== 画像/資料生成（Canvas） ===== */
+function wrapLines(ctx,text,maxW){const out=[];text.split('\n').forEach(seg=>{if(seg===''){out.push('');return;}let line='';for(const ch of seg){if(ctx.measureText(line+ch).width>maxW&&line){out.push(line);line=ch;}else line+=ch;}out.push(line);});return out;}
 function renderCard(text,page,pages){
-  const W=1080,H=1350,pad=96;
-  const cv=document.createElement('canvas'); cv.width=W; cv.height=H;
-  const ctx=cv.getContext('2d');
-  ctx.fillStyle="#ffffff"; ctx.fillRect(0,0,W,H);
-  ctx.fillStyle="#fafafa"; ctx.fillRect(0,0,W,16);
-  // ブランド
-  ctx.fillStyle="#B1881B"; ctx.fillRect(pad,pad,46,6);
-  ctx.textBaseline="alphabetic";
-  ctx.fillStyle="#B1881B"; ctx.font='700 26px "Hiragino Sans","Noto Sans JP",sans-serif';
-  ctx.fillText("BLUESTOKE",pad,pad+46);
-  // 本文（自動フィット・縦中央）
-  const boxW=W-pad*2, boxTop=pad+96, boxBottom=H-150, boxH=boxBottom-boxTop;
-  const FF='"Hiragino Sans","Noto Sans JP",sans-serif';
-  let fs=66, lines=[], lh=0;
-  for(;fs>=28;fs-=2){
-    ctx.font=`600 ${fs}px ${FF}`; lines=wrapLines(ctx,text,boxW); lh=fs*1.62;
-    if(lines.length*lh<=boxH) break;
-  }
-  ctx.font=`600 ${fs}px ${FF}`; ctx.fillStyle="#1d1d1f"; ctx.textBaseline="top";
-  let y=boxTop+Math.max(0,(boxH-lines.length*lh)/2);
-  lines.forEach(l=>{ctx.fillText(l,pad,y); y+=lh;});
-  // フッター
-  ctx.textBaseline="alphabetic";
-  ctx.fillStyle="#6e6e73"; ctx.font='500 26px '+FF;
-  ctx.fillText("@yuya_awesome",pad,H-pad+10);
-  if(pages>1){ctx.textAlign="right"; ctx.fillText(`${page} / ${pages}`,W-pad,H-pad+10); ctx.textAlign="left";}
+  const W=1080,H=1350,pad=96;const cv=document.createElement('canvas');cv.width=W;cv.height=H;const ctx=cv.getContext('2d');
+  ctx.fillStyle="#ffffff";ctx.fillRect(0,0,W,H);ctx.fillStyle="#fafafa";ctx.fillRect(0,0,W,16);
+  ctx.fillStyle="#B1881B";ctx.fillRect(pad,pad,46,6);
+  ctx.textBaseline="alphabetic";ctx.fillStyle="#B1881B";ctx.font='700 26px "Hiragino Sans","Noto Sans JP",sans-serif';ctx.fillText("BLUESTOKE",pad,pad+46);
+  const boxW=W-pad*2,boxTop=pad+96,boxBottom=H-150,boxH=boxBottom-boxTop;const FF='"Hiragino Sans","Noto Sans JP",sans-serif';
+  let fs=66,lines=[],lh=0;for(;fs>=28;fs-=2){ctx.font=`600 ${fs}px ${FF}`;lines=wrapLines(ctx,text,boxW);lh=fs*1.62;if(lines.length*lh<=boxH)break;}
+  ctx.font=`600 ${fs}px ${FF}`;ctx.fillStyle="#1d1d1f";ctx.textBaseline="top";
+  let y=boxTop+Math.max(0,(boxH-lines.length*lh)/2);lines.forEach(l=>{ctx.fillText(l,pad,y);y+=lh;});
+  ctx.textBaseline="alphabetic";ctx.fillStyle="#6e6e73";ctx.font='500 26px '+FF;ctx.fillText("@yuya_awesome",pad,H-pad+10);
+  if(pages>1){ctx.textAlign="right";ctx.fillText(`${page} / ${pages}`,W-pad,H-pad+10);ctx.textAlign="left";}
   return cv;
 }
-function splitSlides(text){
-  const blocks=text.split('\n\n').filter(b=>b.trim()!=='');
-  const slides=[]; if(!blocks.length) return [text];
-  slides.push(blocks[0]); // フック
-  let cur='';
-  for(let i=1;i<blocks.length;i++){
-    const cand=cur?cur+'\n\n'+blocks[i]:blocks[i];
-    if(jpLen(cand)>170 && cur){slides.push(cur);cur=blocks[i];}
-    else cur=cand;
-  }
-  if(cur) slides.push(cur);
-  return slides;
-}
-async function makeImages(text,len,container){
-  container.innerHTML='生成中…';
-  try{ if(document.fonts&&document.fonts.ready) await document.fonts.ready; }catch(e){}
-  const slides = len==="short" ? [text] : splitSlides(text);
-  container.innerHTML='';
-  slides.forEach((s,i)=>{
-    const cv=renderCard(s,i+1,slides.length);
-    const url=cv.toDataURL('image/png');
-    const fig=document.createElement('figure');
-    const img=document.createElement('img'); img.src=url;
-    const a=document.createElement('a'); a.href=url;
-    a.download=`bluestoke_${len}_${i+1}.png`; a.textContent='⬇ 保存';
-    fig.appendChild(img); fig.appendChild(document.createElement('br')); fig.appendChild(a);
-    container.appendChild(fig);
-  });
+function splitSlides(text){const blocks=text.split('\n\n').filter(b=>b.trim()!=='');if(!blocks.length)return[text];const slides=[blocks[0]];let cur='';for(let i=1;i<blocks.length;i++){const cand=cur?cur+'\n\n'+blocks[i]:blocks[i];if(jpLen(cand)>170&&cur){slides.push(cur);cur=blocks[i];}else cur=cand;}if(cur)slides.push(cur);return slides;}
+async function makeImages(text,kind,container){
+  container.innerHTML='生成中…';try{if(document.fonts&&document.fonts.ready)await document.fonts.ready;}catch(e){}
+  const slides=kind==="long"?splitSlides(text):[text];container.innerHTML='';
+  slides.forEach((s,i)=>{const cv=renderCard(s,i+1,slides.length);const url=cv.toDataURL('image/png');
+    const fig=document.createElement('figure');const img=document.createElement('img');img.src=url;
+    const a=document.createElement('a');a.href=url;a.download=`bluestoke_${i+1}.png`;a.textContent='⬇ 保存';
+    fig.appendChild(img);fig.appendChild(document.createElement('br'));fig.appendChild(a);container.appendChild(fig);});
 }
 
+/* ===== 共通UI ===== */
 function copyText(t){if(navigator.clipboard){navigator.clipboard.writeText(t).then(showToast).catch(()=>legacyCopy(t));}else legacyCopy(t);}
 function legacyCopy(t){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}ta.remove();showToast();}
-function showToast(){const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1400);}
+function openX(t){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(t),'_blank');}
+function showToast(msg){const el=$('toast');if(msg)el.textContent=msg;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1400);}
 
-document.querySelectorAll('#presets .chip').forEach(c=>c.addEventListener('click',()=>{document.getElementById('theme').value=c.textContent;render();}));
+document.querySelectorAll('#presets .chip').forEach(c=>c.addEventListener('click',()=>{$('theme').value=c.textContent;render();}));
 document.querySelectorAll('#lenSeg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#lenSeg button').forEach(x=>x.classList.remove('active'));b.classList.add('active');lenMode=b.dataset.len;render();}));
-document.getElementById('genBtn').addEventListener('click',render);
-document.getElementById('theme').addEventListener('keydown',e=>{if(e.key==='Enter')render();});
-render();
+$('genBtn').addEventListener('click',render);
+$('theme').addEventListener('keydown',e=>{if(e.key==='Enter')render();});
+loadAI(); render();
 </script>
 </body>
 </html>
